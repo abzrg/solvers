@@ -1,0 +1,9 @@
+CompileFlags:
+    # Note: an empty compile_flags.txt needs to be placed next to .clangd for
+    # relative paths to work, e.g., -I./src/
+    Add: [
+        -std=c++23, -Wpedantic, -Wall, -Wextra, -Wno-empty-translation-unit,
+    ]
+
+Diagnostics:
+    UnusedIncludes: None
