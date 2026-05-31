@@ -4,10 +4,10 @@ int main()
 {
     Mat<double> A
     (
-        {4,1,
-         1,3},
         2,
-        2
+        2,
+        {4,1,
+         1,3}
     );
 
     Vec<double> b{1,2};

@@ -4,34 +4,7 @@
 #include <cassert>
 #include <vector>
 
-#include "types.hpp"
-#include "concepts.hpp"
-
-
-// TODO:
-// - iterators
-// - begin()/end()
-// - scalar multiplication
-// - addition/subtraction
-// - move constructors
-// - transpose
-// - identity matrix
-// - bounds-safe row access
-// - storage order documentation
-// - constexpr/noexcept where appropriate
-
-/// DESIGN:
-/// - template-based design
-/// - row-major flattened indexing
-/// - dynamic-size matrices/vectors (use of std::vector)
-/// - bounds-checked access through at()
-/// - unchecked access through operator[]
-
-/// It is hoped that it supports:
-/// - integers
-/// - complex numbers
-/// - custom numeric types
-/// - fixed-point arithmetic
+#include "core.hpp"
 
 
 // Forward Declaration
@@ -70,7 +43,7 @@ public:
         elems_(rows*cols, initval)
     {}
 
-    Mat(std::initializer_list<S> initlist, ulabel rows, ulabel cols)
+    Mat(ulabel rows, ulabel cols, std::initializer_list<S> initlist)
     :
         rows_{rows},
         cols_{cols},
@@ -79,7 +52,7 @@ public:
         assert(rows*cols == initlist.size());
     }
 
-    Mat(const std::vector<S>& initvec, ulabel rows, ulabel cols)
+    Mat(ulabel rows, ulabel cols, const std::vector<S>& initvec)
     :
         rows_{rows},
         cols_{cols},

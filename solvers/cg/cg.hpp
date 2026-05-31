@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../src/linalg.hpp"
+#include "linalg.hpp"
 
 /// Conjugate Gradient Solver
 ///

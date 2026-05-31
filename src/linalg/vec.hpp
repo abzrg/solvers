@@ -5,8 +5,7 @@
 #include <ostream>
 #include <vector>
 
-#include "types.hpp"
-#include "concepts.hpp"
+#include "core.hpp"
 #include "complex.hpp"
 
 /*
